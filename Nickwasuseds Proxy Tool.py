@@ -52,5 +52,6 @@ with open('proxylist.txt', 'a') as the_file:
 print(Back.YELLOW + '')
 num_lines = sum(1 for line in open('proxylist.txt'))
 print('Got {} Proxyies!'.format(num_lines))
+sleep(10)
 
 
