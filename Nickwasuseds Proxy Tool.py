@@ -1,16 +1,20 @@
 import requests
 import time
 import os
+import colorama
+from colorama import init
+from colorama import Fore, Back, Style
 from os import getcwd
 
-print('Made by Nickwasused')
-print('*******************')
-print('Version: 0.4')
-print('Sources for Proxy Servers:')
-print('https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt')
-print('https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt')
-print('https://raw.githubusercontent.com/fate0/proxylist/master/proxy.list')
-print('https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt')
+init()
+print(Fore.RED + 'Made by Nickwasused')
+print(Fore.RED + '************************')
+print(Fore.GREEN + 'Version: 0.5')
+print(Fore.WHITE + 'Sources for Proxy Servers:')
+print(Back.BLUE + 'https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt')
+print(Back.BLUE + 'https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt')
+print(Back.BLUE + 'https://raw.githubusercontent.com/fate0/proxylist/master/proxy.list')
+print(Back.BLUE + 'https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt')
 os.system('fsutil file createnew proxylist.txt 1')
 os.remove("proxylist.txt")
 url1 = "https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt"
@@ -45,9 +49,8 @@ with open('proxylist.txt', 'a') as the_file:
     the_file.write(url3)
 with open('proxylist.txt', 'a') as the_file:
     the_file.write(url4)
-print('got this:')
-print(r.text)
-print(t.text)
-print(l.text)
-print(s.text)
+print(Back.YELLOW + '')
+num_lines = sum(1 for line in open('proxylist.txt'))
+print('Got {} Proxyies!'.format(num_lines))
+
 
