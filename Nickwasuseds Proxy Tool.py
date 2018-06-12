@@ -1,15 +1,21 @@
 import requests
 import time
 import os
+import urllib
+import sys
+import socket
+import ctypes
+import urllib.request
 import colorama
 from colorama import init
 from colorama import Fore, Back, Style
 from os import getcwd
 
 init()
+ctypes.windll.kernel32.SetConsoleTitleW("Nickwasused´s Proxy Tool")
 print(Fore.RED + 'Made by Nickwasused')
 print(Fore.RED + '************************')
-print(Fore.GREEN + 'Version: 0.5')
+print(Fore.GREEN + 'Version: 0.6')
 print(Fore.WHITE + 'Sources for Proxy Servers:')
 print(Back.BLUE + 'https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt')
 print(Back.BLUE + 'https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt')
@@ -52,6 +58,17 @@ with open('proxylist.txt', 'a') as the_file:
 print(Back.YELLOW + '')
 num_lines = sum(1 for line in open('proxylist.txt'))
 print('Got {} Proxyies!'.format(num_lines))
-time.sleep(10)
-
-
+print(Fore.WHITE + "Sleeping 5 Secconds")
+time.sleep(5)
+proxys  = open('proxylist.txt', 'r')
+proxyList = proxys.readlines()
+try:
+        proxies = {"http": "http://" + str(proxyList)}
+        opener = urllib.request.FancyURLopener(proxies)
+        opener.open("https://www.google.com")
+except IOError:
+    print(Fore.RED + "Proxy error! (Check proxy)")
+    time.sleep(5)
+else:
+    print(Fore.GREEN + "All proxies are Working!")
+    time.sleep(5)
