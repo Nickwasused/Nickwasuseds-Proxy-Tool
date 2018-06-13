@@ -15,18 +15,18 @@ init()
 ctypes.windll.kernel32.SetConsoleTitleW("Nickwasused´s Proxy Tool")
 print(Fore.RED + 'Made by Nickwasused')
 print(Fore.RED + '************************')
-print(Fore.GREEN + 'Version: 0.6')
+print(Fore.GREEN + 'Version: 0.7')
 print(Fore.WHITE + 'Sources for Proxy Servers:')
 print(Back.BLUE + 'https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt')
 print(Back.BLUE + 'https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt')
-print(Back.BLUE + 'https://raw.githubusercontent.com/fate0/proxylist/master/proxy.list')
 print(Back.BLUE + 'https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt')
+print(Back.BLUE + 'https://raw.githubusercontent.com/DarrenRainey/HTTP-Proxy-List/master/lists/1025674')
 os.system('fsutil file createnew proxylist.txt 1')
 os.remove("proxylist.txt")
 url1 = "https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt"
 url2 = "https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt"
-url3 = "https://raw.githubusercontent.com/fate0/proxylist/master/proxy.list"
-url4 = "https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt"
+url3 = "https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt"
+url4 = "https://raw.githubusercontent.com/DarrenRainey/HTTP-Proxy-List/master/lists/1025674"
 directory = getcwd()
 filename = directory + 'proxylist.txt'
 r = requests.get(url1)
@@ -54,7 +54,7 @@ with open('proxylist.txt', 'a') as the_file:
 with open('proxylist.txt', 'a') as the_file:
     the_file.write(url3)
 with open('proxylist.txt', 'a') as the_file:
-    the_file.write(url4)
+    the_file.write(url3)
 print(Back.YELLOW + '')
 num_lines = sum(1 for line in open('proxylist.txt'))
 print('Got {} Proxyies!'.format(num_lines))
