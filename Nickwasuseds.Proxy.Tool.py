@@ -12,7 +12,7 @@ from colorama import init
 from colorama import Fore, Back, Style
 from os import getcwd #done
 
-versionupdate = "https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt"
+versionupdate = "https://raw.githubusercontent.com/Nickwasused/Nickwasuseds-Proxy-Tool/master/version.txt"
 v = requests.get(versionupdate)
 with open('version.txt', 'a') as the_file: #fileopen
     the_file.write(v.text)
