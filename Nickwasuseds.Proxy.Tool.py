@@ -5,7 +5,6 @@ import urllib
 import sys
 import socket
 import ctypes
-import NickwasusedPrint
 import urllib.request
 import colorama
 from pathlib import Path
@@ -13,34 +12,16 @@ from colorama import init
 from colorama import Fore, Back, Style
 from os import getcwd #done
 
-<<<<<<< HEAD
-=======
-NickwasusedPrint.versiontxt()
+init() #init colorrama
 
-f=open('version.txt') #reading the version file
-lines=f.readlines()
-
->>>>>>> 0a2d85a0958aa4200214206102beb0ee6dfdd265
 print(Fore.RED + 'Made by Nickwasused') #printing some stuff
 print(Fore.RED + '************************')
-print(Fore.GREEN + 'Version: 0.9.4')
+print(Fore.GREEN + 'Version: 0.9.5')
 print(Fore.WHITE + 'Sources for Proxy Servers:')
 print(Back.BLUE + 'https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt')
 print(Back.BLUE + 'https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt')
 print(Back.BLUE + 'https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt')
 print(Back.BLUE + 'https://raw.githubusercontent.com/DarrenRainey/HTTP-Proxy-List/master/lists/1025674') #end printing
-
-<<<<<<< HEAD
-=======
-
-with open('version.txt') as myfile:
-    if 'wjkjwkbndjkawjkdnjwadnjka' in myfile.read():
-         print('Update avalible here: https://github.com/Nickwasused/Nickwasuseds-Proxy-Tool')
-    else:
-        pass
-
->>>>>>> 0a2d85a0958aa4200214206102beb0ee6dfdd265
-init() #init colorrama
 
 ctypes.windll.kernel32.SetConsoleTitleW("Nickwasused´s Proxy Tool") #setting the Window Title
 
@@ -50,7 +31,6 @@ if my_file.is_file():
 else:
     os.system('fsutil file createnew proxylist.txt 1') #creating the File "procylist.txt"
 
-<<<<<<< HEAD
 url1 = "https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt" #url 1-4
 url2 = "https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt"
 url3 = "https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt"
@@ -79,9 +59,6 @@ with open('proxylist.txt', 'a') as the_file:
 with open('proxylist.txt', 'a') as the_file:
      the_file.write(s.text) #write the Content of Download 4
 print(Back.YELLOW + '') #printig some Stuff again
-=======
-NickwasusedPrint.getproxy()
->>>>>>> 0a2d85a0958aa4200214206102beb0ee6dfdd265
 
 num_lines = sum(1 for line in open('proxylist.txt')) #reading the File Lines
 
