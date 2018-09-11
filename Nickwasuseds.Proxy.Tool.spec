@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['Nickwasuseds.Proxy.Tool.py'],
-             pathex=['C:\\Users\\Nickwasused\\Desktop\\0.9.3'],
+             pathex=['C:\\Users\\Nickwasused\\Documents\\GitHub\\Nickwasuseds-Proxy-Tool'],
              binaries=[],
              datas=[],
              hiddenimports=[],
