@@ -6,7 +6,7 @@ Compiled with pyinstaller
 
 # How to Run?
 
-cd /thedirectory
+cd /thedirectory <br>
 ./Nickwasuseds.Proxy.Tool
 
 ![The Program](https://raw.githubusercontent.com/Nickwasused/Nickwasuseds-Proxy-Tool/master/Nickwasused.Proxy.Tool.0.9.5.png) 
