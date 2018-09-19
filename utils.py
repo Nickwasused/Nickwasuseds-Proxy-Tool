@@ -46,33 +46,49 @@ def countproxys():
     print("Sleeping 5 Secconds")
 
 
-def downloadproxys():
+def downloadproxy1():
     chunk_size = 1024
     url1 = "https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt"  # url 1-4
-    url2 = "https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt"
-    url3 = "https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt"
-    url4 = "https://raw.githubusercontent.com/DarrenRainey/HTTP-Proxy-List/master/lists/1025674"
     a = requests.get(url1, stream=True)
-    b = requests.get(url2, stream=True)
-    c = requests.get(url3, stream=True)
-    d = requests.get(url4, stream=True)
     total_size_1 = int(a.headers['content-length'])
-    total_size_2 = int(b.headers['content-length'])
-    total_size_3 = int(c.headers['content-length'])
-    total_size_4 = int(d.headers['content-length'])
     with open('proxylist.txt', 'wb') as f:
         for data in tqdm(iterable=a.iter_content(chunk_size=chunk_size), total=total_size_1 / chunk_size, unit='KB'):
             f.write(data)
+    pass
+
+
+def downloadproxy2():
+    chunk_size = 1024
+    url2 = "https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt"
+    b = requests.get(url2, stream=True)
+    total_size_2 = int(b.headers['content-length'])
     with open('proxylist.txt', 'wb') as f:
         for data in tqdm(iterable=b.iter_content(chunk_size=chunk_size), total=total_size_2 / chunk_size, unit='KB'):
             f.write(data)
+    pass
+
+
+def downloadproxy3():
+    chunk_size = 1024
+    url3 = "https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt"
+    c = requests.get(url3, stream=True)
+    total_size_3 = int(c.headers['content-length'])
     with open('proxylist.txt', 'wb') as f:
         for data in tqdm(iterable=c.iter_content(chunk_size=chunk_size), total=total_size_3 / chunk_size, unit='KB'):
             f.write(data)
+    pass
+
+
+def downloadproxy4():
+    chunk_size = 1024
+    url4 = "https://raw.githubusercontent.com/DarrenRainey/HTTP-Proxy-List/master/lists/1025674"
+    d = requests.get(url4, stream=True)
+    total_size_4 = int(d.headers['content-length'])
     with open('proxylist.txt', 'wb') as f:
         for data in tqdm(iterable=d.iter_content(chunk_size=chunk_size), total=total_size_4 / chunk_size, unit='KB'):
             f.write(data)
     pass
+
 
 def checkproxys():
     from checker import checker

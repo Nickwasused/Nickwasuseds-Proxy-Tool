@@ -12,7 +12,7 @@ def infoprint1():
     print(Fore.BLUE + '  ')
     print('Made by Nickwasused')
     print('************************')
-    print('Version: 0.9.7')
+    print('Version: 0.9.8')
     print('Sources for Proxy Servers:')
     print('https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt')
     print('https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt')
