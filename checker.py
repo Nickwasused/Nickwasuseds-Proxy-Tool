@@ -1,6 +1,7 @@
-from colorama import Fore
 import requests
 import urllib3
+from colorama import Fore
+from colorama import init
 
 
 # Source Code: https://github.com/pythonism/proxy-checker
@@ -8,11 +9,12 @@ import urllib3
 class checker(object):
 
     def check(self, filename):
+        init()
         url = 'http://google.com'
         try:
             liner = filename.split('\n', 1)[0]
             requests.get(url, proxies={'http': 'http://' + liner}, timeout=(3.05, 27))
-            print('Working')
+            print(Fore.GREEN + 'Working')
         except requests.exceptions.ConnectionError as e:
             print(Fore.RED + 'Error', e)
             return e
