@@ -1,7 +1,7 @@
 import colorama
 import utils
 from colorama import init
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 
 init()
 
@@ -12,7 +12,7 @@ def infoprint1():
     print(Fore.BLUE + '  ')
     print('Made by Nickwasused')
     print('************************')
-    print('Version: 0.9.8')
+    print('Version: 1.0.0')
     print('Sources for Proxy Servers:')
     print('https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt')
     print('https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt')
