@@ -7,7 +7,7 @@ Compiled with pyinstaller (Linux & Windows)
 # How to Run (Linux)?
 
 cd /thedirectory <br>
-./Nickwasuseds.Proxy.Tool
+./Nickwasuseds.Proxy.Tool.Linux
 
 # How to Run (Windows)?
 
