@@ -2,7 +2,7 @@
 
 Coded in python 3.6
 
-Compiled with pyinstaller
+Compiled with pyinstaller (Linux & Windows)
 
 # How to Run (Linux)?
 
