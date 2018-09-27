@@ -16,47 +16,46 @@ from pathlib import Path
 from os import getcwd  # done
 
 if sys.platform == 'win32':
+    print('System: Windows')
     utils.checkfilewindows()
 else:
     pass
 
 if sys.platform == 'linux':
+    print('System: Linux')
     utils.checkfilelinux()
 else:
     pass
 
 info.infoprint1()
 
+utils.downloadproxys()
 
-worker_0 = multiprocessing.Process(
-    name='worker 0',
-    target=utils.downloadproxy1(),
-)
-
-worker_1 = multiprocessing.Process(
-    name='worker 1',
-    target=utils.downloadproxy2(),
-)
-
-worker_2 = multiprocessing.Process(
-    name='worker 2',
-    target=utils.downloadproxy3(),
-)
-
-worker_3 = multiprocessing.Process(
-    name='worker 3',
-    target=utils.downloadproxy4(),
-)
-
-worker_0.start()
-worker_1.start()
-worker_2.start()
-worker_3.start()
+time.sleep(5)
 
 utils.countproxys()
 
 time.sleep(5)  # waiting
 
+worker_0 = multiprocessing.Process(
+    name='worker 0',
+    target=utils.checkproxys(),
+)
+
+worker_1 = multiprocessing.Process(
+    name='worker 1',
+    target=utils.checkproxys(),
+)
+
+worker_2 = multiprocessing.Process(
+    name='worker 2',
+    target=utils.checkproxys(),
+)
+
+worker_3 = multiprocessing.Process(
+    name='worker 3',
+    target=utils.checkproxys(),
+)
 worker_4 = multiprocessing.Process(
     name='worker 4',
     target=utils.checkproxys(),
@@ -77,6 +76,10 @@ worker_7 = multiprocessing.Process(
     target=utils.checkproxys(),
 )
 
+worker_0.start()
+worker_1.start()
+worker_2.start()
+worker_3.start()
 worker_4.start()
 worker_5.start()
 worker_6.start()

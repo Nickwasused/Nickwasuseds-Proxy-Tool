@@ -8,6 +8,7 @@ import socket
 import random
 import info
 import utils
+import urllib3
 import urllib.request
 from os import getcwd
 from os import system as term
@@ -45,57 +46,39 @@ def checkfilelinux():
 
 
 def countproxys():
-    num_lines = sum(1 for line in open('proxylist.txt'))  # reading the File Lines
-    print('Got {} Proxyies!'.format(num_lines))  # and Again....
+    time.sleep(2)
+    temp2 = open('proxylist.txt', 'r')
+    temp3 = temp2.readline()
+    num_lines = sum(1 for temp3 in temp2)
+    print('Got {} Proxyies!'.format(num_lines))
     print("Sleeping 5 Secconds")
     print(" ")
     print(" ")
     print(" ")
 
-
-def downloadproxy1():
-    chunk_size = 1024
+def downloadproxys():
+    chunk_size = 1000000
     url1 = var.url1
-    a = requests.get(url1, stream=True)
-    total_size_1 = int(a.headers['content-length'])
-    with open('proxylist.txt', 'wb') as f:
-        for data in tqdm(iterable=a.iter_content(chunk_size=chunk_size), total=total_size_1 / chunk_size, unit='KB'):
-            f.write(data)
-    pass
-
-
-def downloadproxy2():
-    chunk_size = 1024
     url2 = var.url2
-    b = requests.get(url2, stream=True)
-    total_size_2 = int(b.headers['content-length'])
-    with open('proxylist.txt', 'wb') as f:
-        for data in tqdm(iterable=b.iter_content(chunk_size=chunk_size), total=total_size_2 / chunk_size, unit='KB'):
-            f.write(data)
-    pass
-
-
-def downloadproxy3():
-    chunk_size = 1024
     url3 = var.url3
-    c = requests.get(url3, stream=True)
-    total_size_3 = int(c.headers['content-length'])
-    with open('proxylist.txt', 'wb') as f:
-        for data in tqdm(iterable=c.iter_content(chunk_size=chunk_size), total=total_size_3 / chunk_size, unit='KB'):
-            f.write(data)
-    pass
-
-
-def downloadproxy4():
-    chunk_size = 1024
     url4 = var.url4
+    a = requests.get(url1, stream=True)
+    b = requests.get(url2, stream=True)
+    c = requests.get(url3, stream=True)
     d = requests.get(url4, stream=True)
+    total_size_1 = int(a.headers['content-length'])
+    total_size_2 = int(b.headers['content-length'])
+    total_size_3 = int(c.headers['content-length'])
     total_size_4 = int(d.headers['content-length'])
     with open('proxylist.txt', 'wb') as f:
-        for data in tqdm(iterable=d.iter_content(chunk_size=chunk_size), total=total_size_4 / chunk_size, unit='KB'):
+        for data in tqdm(iterable=a.iter_content(chunk_size=chunk_size), total=total_size_1 / chunk_size, unit='MB'):
             f.write(data)
-    pass
-
+        for data in tqdm(iterable=b.iter_content(chunk_size=chunk_size), total=total_size_2 / chunk_size, unit='MB'):
+            f.write(data)
+        for data in tqdm(iterable=c.iter_content(chunk_size=chunk_size), total=total_size_3 / chunk_size, unit='MB'):
+            f.write(data)
+        for data in tqdm(iterable=d.iter_content(chunk_size=chunk_size), total=total_size_4 / chunk_size, unit='MB'):
+            f.write(data)
 
 def checkproxys():
     from checker import checker

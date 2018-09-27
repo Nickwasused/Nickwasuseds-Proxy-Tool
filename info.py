@@ -1,5 +1,6 @@
 import colorama
 import utils
+import variables
 from colorama import init
 from colorama import Fore, Style
 
@@ -9,13 +10,12 @@ init()
 def infoprint1():
     init()
     print(Style.BRIGHT + '  ')
-    print(Fore.BLUE + '  ')
-    print('Made by Nickwasused')
-    print('************************')
-    print('Version: 1.0.0')
-    print('Sources for Proxy Servers:')
-    print('https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list.txt')
-    print('https://raw.githubusercontent.com/a2u/free-proxy-list/master/free-proxy-list.txt')
-    print('https://raw.githubusercontent.com/opsxcq/proxy-list/master/list.txt')
-    print('https://raw.githubusercontent.com/DarrenRainey/HTTP-Proxy-List/master/lists/1025674')
-    print(Fore.WHITE + ' ')
+    print(Fore.RED + 'Made by Nickwasused')
+    print(Fore.BLUE + '************************')
+    print(Fore.GREEN + 'Version: 1.0.2')
+    print(Fore.RED + 'Sources for Proxy Servers:')
+    print(Fore.YELLOW + variables.urls.url1)
+    print(Fore.BLUE + variables.urls.url2)
+    print(Fore.GREEN + variables.urls.url3)
+    print(Fore.RED + variables.urls.url4)
+    print(' ')
